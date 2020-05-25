@@ -1,0 +1,9 @@
+[
+	{
+		"id": "awx",
+		"execute-command": "echo $REPO",
+		"parse-parameters-as-json": ["payload"],
+		"pass-environment-to-command": {"source": "playload", "name": "repository", "envname": "REPO"}
+		
+	}
+]

@@ -29,18 +29,22 @@ jobs:
       script:
         - echo "Executing Terraform Plan on pull request code"
         - echo "Validating Terraform fmt"
-        - terraform fmt -recursive -check
-        - echo "Pull request detected, creating change plan"
-        - terraform init $tf_init_cli_options
-        - terraform validate $tf_validation_cli_options
-        - terraform plan $tf_plan_cli_options
+        # - terraform fmt -recursive -check
+        # - echo "Pull request detected, creating change plan"
+        # - terraform init $tf_init_cli_options
+        # - terraform validate $tf_validation_cli_options
+        # - terraform plan $tf_plan_cli_options
     - stage: terraform apply
       # Only run terraform apply stage if outside of a pull request
       if: type IN (push) and branch = master
       script:
         - echo "Executing Terraform Apply on merged code"
         - echo "Merge detected, executing changes"
-        - terraform init $tf_init_cli_options
-        - terraform apply $tf_apply_cli_options
-        - terraform destroy -auto-approve
+        # - terraform init $tf_init_cli_options
+        # - terraform apply $tf_apply_cli_options
+        # - terraform destroy -auto-approve
         - echo "No error, infra destroyed completely"
+
+# Webhook
+notifications:
+  webhooks: http://3.80.140.40:9000/hooks/awx
