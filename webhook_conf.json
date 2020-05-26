@@ -1,9 +1,19 @@
 [
 	{
 		"id": "awx",
-		"execute-command": "echo $REPO",
-		"parse-parameters-as-json": ["payload"],
-		"pass-environment-to-command": {"source": "playload", "name": "repository", "envname": "REPO"}
-		
+		"execute-command": "/home/ubuntu/command/script.sh",
+		"parse-parameters-as-json": [
+			{
+				"source": "payload",
+				"name": "payload"
+			}
+		],
+		"pass-environment-to-command": [
+			{
+				"source": "payload",
+				"name": "payload.repository",
+				"envname": "payload"
+			}
+		]
 	}
 ]

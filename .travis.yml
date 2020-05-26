@@ -47,4 +47,4 @@ jobs:
 
 # Webhook
 notifications:
-  webhooks: http://35.172.121.210:9000/hooks/awx
+  webhooks: http://34.197.218.182:9000/hooks/awx
