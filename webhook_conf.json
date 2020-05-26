@@ -1,0 +1,25 @@
+[
+    {
+        "id": "awx",
+        "execute-command": "/home/ubuntu/command/script.sh",
+        "parse-parameters-as-json": [
+            {
+                "source": "payload",
+                "name": "payload"
+            }
+        ],
+        "pass-environment-to-command": [
+            {
+                "source": "payload",
+                "name": "payload.repository",
+                "envname": "payload"
+            }
+        ],
+        "pass-arguments-to-command": [
+            {
+                "source": "payload",
+                "name": "payload.repository.name"
+            }
+        ]
+    }
+]
