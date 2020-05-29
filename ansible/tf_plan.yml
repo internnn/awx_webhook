@@ -13,9 +13,7 @@
         cmd: terraform init
         chdir: ../terraform/
     - name: create planfile
-      command:
-        cmd: touch tfplan
-        chdir: ../terraform/
+      file: path=../terraform/tfplan state=touch
     - name: plan
       terraform:
         project_path: ../terraform/
