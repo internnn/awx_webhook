@@ -15,7 +15,7 @@
     - name: plan
       terraform:
         project_path: ../terraform/
-        plan_file: ansible/tfplan
+        # plan_file: ansible/tfplan
         lock: true
         state: planned
         variables:
