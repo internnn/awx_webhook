@@ -12,10 +12,13 @@
       command:
         cmd: terraform init
         chdir: ../terraform/
+    - name: create planfile
+      command:
+        cmd: touch tfplan
     - name: plan
       terraform:
         project_path: ../terraform/
-        # plan_file: ansible/tfplan
+        plan_file: ansible/tfplan
         lock: true
         state: planned
         variables:
